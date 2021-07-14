@@ -40,3 +40,13 @@ git show HEAD~:index.html //посмотреть содержание конкр
 git show :index.html //посмотреть версию файла из индекса
 git show :/sayBye //поиск по описанию коммита, будет найден самый свежий коммит со словом в описании
 
+//Слияние веток перемоткой//
+
+Слияние ветки fix и ветки master
+
+git checkout master //Переключаемся на ветку master
+git merge fix //сливаем ветк fix с текущей веткой
+git branch -f master 54a4 //передвинуть ветку мастер на коомит до слияния
+git branch -f master ORIG_HEAD //откатить ветку master на коммит из ORIG_HEAD 
+
+git checkout -B master fix //аналогично git merge fix на master 
