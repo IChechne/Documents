@@ -50,3 +50,9 @@ git branch -f master 54a4 //передвинуть ветку мастер на 
 git branch -f master ORIG_HEAD //откатить ветку master на коммит из ORIG_HEAD 
 
 git checkout -B master fix //аналогично git merge fix на master 
+
+git branch -d fix //удалить ветку fix, удаление сработает только если удаляемая
+ветка объединена с текущей
+git branch -D feature //удалить ветку feature  без учета того, что ее коммиты не 
+перенесены в другие ветки. Удаляеться ссылка, но недостижимые коммиты какое-то 
+время храняться в базе
