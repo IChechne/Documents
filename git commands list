@@ -143,3 +143,54 @@ git log --after '2017-09-17' //после
 git blame INSTALL //вывести список изменнений файла с указателем автора
 git blame INSTALL --date=short -L 5,8 //сократить дату, вывести только нужные строки из диапазона
 
+//git merge истинное слияние//
+
+git merge-base master feature //  вывести base коммит, после которого ветки разделились
+git checkout --ours index.html  //взять изменения из текущей ветки
+git  checkout --theirs index.html //взять изменения из вливаемой ветки
+git checkout --merge index.html //продолжить слияния  
+git reset --hard //отменить все и вернуться к последнему коммиту в текущей ветке
+git reset --merge //оставить файлы в которых не возникло конфликтов, откатить файлы с конфликтами
+git merge --abort //аналог git reset --merge
+git checkout --conflict-diff3 --merge index.html //вывести что было в месте конфшликта до разделения веток
+git comfig --global merge.conflictStyle diff3 //настроить по умолчанию такое отображение конфликта 
+git show :1:index.html //вывести из индекса базовую версию
+git show :2:index.html //версию из текущей ветки
+git show :3:index.html //из сливаемой ветки
+git merge --continue //аналог git commit который работает только из состояния слияния
+git show --first-parent //изменения относительно первого родителя
+git show -m //отличия от обоих родителей
+git diff HEAD^ //отличия от первого родителя
+git diff HEAD^2 //от второг
+git diff HEAD^^ //от родителя первого родителя
+git diff HEAD^2^ //от родителя второго родителя
+
+git branch --merge //показать ветки объединенные с текущей
+git branch --no-merge //не объедиенные
+git merge feature --log //добавить в коммит слияния описания из коммитов feature
+git log --first-parent //лог только по коммитам основной ветки при слиянии, ветки первого родителя
+git reset --hard @~ //отменить коммит слияния
+git merge --no-commit //слить результаты мерджа в индекс, но не коммитить их
+исправляем конфликт в код
+git add index.html //добавляем изменения в индекс
+git merge --continue  //закомитить изменения 
+git merge fix --squash //перенести изменения из ветки fix в индекс на текущей ветке -squash не создается ORIG_HEAD
+
+//cherry-pick//
+
+git cherry-pick D //D - указатель коммита
+
+при конфликтах:
+git cherry-pick --continue //продолжить 
+git cherry-pick --abort //полность отменить, работает только в процессе cherry-pick
+git cherry-pick --quit //оставить то что скопировалось без конфликтов
+git cherry-pick -n D // -n или --no-commit перенести изменения в текущее состояние проекта
+
+//rebase//
+
+git rebase --abort //выйти из rebase, будет удалена служебная информация и вернет HEAD на прежнее место
+git rebase  --quite //то же самое но без переноса  HEAD
+git rebase --skip //пропустить копирование коммита и продолжить rebase
+git rebase --continue //продолжить rebase после конфликта
+git reset --hard ORIG_HEAD //отменить rebase
+git rebase --onto master feature //перенести комиты из текущей ветки, на мастер, с момента отделения ветки feature
