@@ -152,6 +152,7 @@ https://www.opennet.ru/man.shtml?topic=cut&category=1&russian=0
 ! head cities.csv | cut -d',' -f6,7  # разделяем данные по запятой и берем только 6 и 7 столбец
 ! cat cities.csv | tail -n +2 | cut -d',' -f9 | head  # смотрим только колонку City. Tail нужен, чтобы убрать заголовок
 ! cat cities.csv | tail -n +2 | cut -d',' -f9 | sort | uniq | wc -l  # считаем количество уникальных городов 
+! cat res.csv |cut -d',' -f1- #столбцы с 1 до конца
 
 -grep-
 позволяет фильтровать входной поток по указанному регулярному выражению
