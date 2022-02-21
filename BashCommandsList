@@ -148,6 +148,7 @@ https://www.opennet.ru/man.shtml?topic=wc&category=1&russian=0
 парсит строки, которые состоят из значений с разделителем. С помощью утилиты можно обрабатывать различные регулярные форматы данных, 
 базирующиеся на разделителях. Например `csv` или `tsv`.
 https://www.opennet.ru/man.shtml?topic=cut&category=1&russian=0
+https://www.youtube.com/watch?v=_GxXbM0METw&t=3
 
 ! head cities.csv | cut -d',' -f6,7  # разделяем данные по запятой и берем только 6 и 7 столбец
 ! cat cities.csv | tail -n +2 | cut -d',' -f9 | head  # смотрим только колонку City. Tail нужен, чтобы убрать заголовок
