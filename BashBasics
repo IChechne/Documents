@@ -1,1 +1,19 @@
+Bash Scripting Tutorial for Beginners
+https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+
+--Создаем файл со скриптом--
+vi task.sh #создать и начать редактировать файл в редакторе vi, после ввода текста esc потом shift + z 2 раза
+https://docs.altlinux.org/ru-RU/archive/2.3/html-single/junior/alt-docs-extras-linuxnovice/ch02s10.html #vi редактор управление
+#в тексте вводим команды в отдельных строках
+
+chmod +x task.sh #сделать файл исполнимым
+./task.sh #выполнить скрипт из файла
+
+witch bash #путь до баша
+
+в файл sh добавляем путь до интерпритатора
+#!/bin/bash
+#пустая строка
+pwd
+
 
