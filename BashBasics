@@ -11,6 +11,8 @@ file task.sh #вывести тип файла
 ./task.sh #выполнить скрипт из файла
 $ bash date.sh #выполнить исполнимый файл
 
+py /c/Users/ivan.chechnev/Downloads/sample.py # выполниить python файл, на маке и линуксе python3, windows py
+
 which bash #путь до баша
 
 в файл sh добавляем путь до интерпритатора
